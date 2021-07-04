@@ -9,7 +9,7 @@ rootWindow = tkinter.Tk()
 rootWindow.title("Sorting Algorithm Visualizer")
 rootWindow.minsize(900, 540)
 rootWindow.maxsize(900, 540)
-rootWindow.tk_setPalette("white")
+rootWindow.tk_setPalette("lightgray")
 
 # Variables
 selected_Algorithm = tkinter.StringVar()
@@ -82,7 +82,7 @@ canvas.grid(row=1, column=0, padx=0, pady=5)
 
 # User Interface
 # Row [0]
-tkinter.Label(UI_frame, text="Algorithm: ").grid(row=0, column=0, padx=0, pady=5, sticky=W)
+tkinter.Label(UI_frame, text="Selected algorithm: ").grid(row=0, column=0, padx=0, pady=5, sticky=W)
 algorithmMenu = Combobox(UI_frame, textvariable=selected_Algorithm, values=["Bubble Sort", "Quick Sort", "Merge Sort"])
 algorithmMenu.grid(row=0, column=1, padx=5, pady=5)
 algorithmMenu.current(0)
@@ -91,7 +91,7 @@ speedScale = tkinter.Scale(UI_frame, from_=0.1, to=2.0, length=200, digits=2, re
 speedScale.grid(row=0, column=2, padx=5, pady=5)
 
 #Start Button
-tkinter.Button(UI_frame, text="Start", command=StartAlgorithm).grid(row=0, column=3, padx=5, pady=5)
+tkinter.Button(UI_frame, text="Start sorting!", command=StartAlgorithm, bg="lightgreen").grid(row=0, column=3, padx=5, pady=5)
 
 
 # Row [1]
@@ -105,7 +105,7 @@ maxEntry = tkinter.Scale(UI_frame, from_=10, to=100, resolution=1, orient=HORIZO
 maxEntry.grid(row=1, column=2, padx=5, pady=5)
 
 # Generate button
-tkinter.Button(UI_frame, text="Generate", command=Generate).grid(row=1, column=3, padx=5, pady=5)
+tkinter.Button(UI_frame, text="Generate data", command=Generate, bg="lightblue").grid(row=1, column=3, padx=5, pady=5)
 
 
 rootWindow.mainloop()
